@@ -1,10 +1,10 @@
-from msilib.schema import File
 import requests
 
 mirrors = { 
         "beatconnect.io": "https://beatconnect.io/b/{}",
         "chimu.moe": "https://api.chimu.moe/v1/download/{}?n=1"
         }
+
 def downL(link,outfile="out.osz"):
     try:
         bm = requests.get(link)
@@ -17,18 +17,6 @@ def downL(link,outfile="out.osz"):
 
 def get(idx,mirror,outfile):
     return downL(mirrors[mirror].replace("{}",idx),outfile)
-
-
-
-
-
-
-
-
-
-
-
-
 
 import os
 osusongsdir = os.getcwd() + "\\Songs"
@@ -58,7 +46,7 @@ for map in ids:
             print(f"downloading map!")
             code = get(map,cloud,f"./dlsongs/{str(map)}.osz")
             if code == 200:
-                print("beatconnect worked")
+                print(f"{cloud} worked")
                 break
             print(f"map done!")
     else: print(f"map Exists!");  pass
