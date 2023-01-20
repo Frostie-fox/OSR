@@ -9,5 +9,5 @@ it generates a "songids.txt" file with all the beatmap ids in case the user want
 It also reads the folder if a song already exists there, so it won't redownload maps it already downloaded in case it exits.
 
 ```
-checking <MAP ID> |  <WHAT IT SAYS IN ITS FOLDER NAME (example: my author - my song)> | item <CURRENT ITEM> of <BEATMAPS U HAVE> | (<BEATMAPS U HAVE>-<CURRENT ITEM>) remaining
+checking <MAP ID> |  <WHAT IT SAYS IN ITS FOLDER NAME (example: my author - my song)> | item _ of <BEATMAPS U HAVE> | _ remaining
 ```
