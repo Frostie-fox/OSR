@@ -27,6 +27,7 @@ def scanosudir():
         sp = file.split()
         if str(sp[0]).isnumeric() == True:
             ids.append(sp[0])
+    return ids
 def readosrfile(FN):
     osrfile = open(FN,"r")
     ids = osrfile.read().split('\n')
@@ -38,23 +39,24 @@ def generateosrfile(osrfilename='songids.txt'):
     for idx in ids:
         songsfile.write(idx+'\n')
     songsfile.close()
-try:
-    os.mkdir("dlsongs")
-except FileExistsError:
-    pass
-for map in ids:
-    print(f"\nchecking {map} | {files[ids.index(map)].split(map)[1]} | item {ids.index(map)} of {len(ids)} | {int(len(ids)-int(ids.index(map)))} remaining")
+def OsrRedownload(ids):
     try:
-        open(f"./dlsongs/{str(map)}.osz",'rb').close()
-    except FileNotFoundError:
-        for cloud in mirrors:
-            print(f"downloading map!")
-            code = get(map,cloud,f"./dlsongs/{str(map)}.osz")
-            if code == 200:
-                print(f"{cloud} worked")
-                break
-            print(f"map done!")
-    else: print(f"map Exists!");  pass
+        os.mkdir("dlsongs")
+    except FileExistsError:
+        pass
+    for map in ids:
+        print(f"\nchecking {map} | {files[ids.index(map)].split(map)[1]} | item {ids.index(map)} of {len(ids)} | {int(len(ids)-int(ids.index(map)))} remaining")
+        try:
+            open(f"./dlsongs/{str(map)}.osz",'rb').close()
+        except FileNotFoundError:
+            for cloud in mirrors:
+                print(f"downloading map!")
+                code = get(map,cloud,f"./dlsongs/{str(map)}.osz")
+                if code == 200:
+                    print(f"{cloud} worked")
+                    break
+                print(f"map done!")
+        else: print(f"map Exists!");  pass
 
 
 
@@ -67,12 +69,13 @@ ap.add_argument("-i", "--IDin", required=True,
 ap.add_argument("-o", "--OutFile", required=False,
                 help="[filename]/False; generates the songids.txt file or not.")
 args = vars(ap.parse_args())
-
-if args["IDin"] == False:
-    scanosudir()
-else:
-    readosrfile(args["IDin"])
-if args["OutFile"] == False:
+if args["IDin"] == 'False':
+    ids = scanosudir()
+elif not args["IDin"] == 'False':
+    ids = readosrfile(args["IDin"])
+if args["OutFile"] == False or args["OutFile"] == None:
     pass
 else:
     generateosrfile(args["OutFile"])
+
+OsrRedownload(ids)
