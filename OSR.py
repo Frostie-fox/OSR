@@ -31,6 +31,7 @@ def readosrfile(FN):
     osrfile = open(FN,"r")
     ids = osrfile.read().split('\n')
     osrfile.close()
+    return ids
 
 def generateosrfile(osrfilename='songids.txt'):
     songsfile = open(osrfilename,'w')
