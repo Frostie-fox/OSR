@@ -9,6 +9,6 @@ It also reads the folder if a song already exists there, so it won't redownload 
 # PUT INTO MAIN OSU FOLDER NOT SONGS FOLDER!
 # Run as a command prompt application:
 ```
-py -m OSR.py -help
+py -m OSR.py --help
 ```
 # This only works if you didn't modify the folders in the songs folder in the osu directory, because it pulls all data from folder names.
