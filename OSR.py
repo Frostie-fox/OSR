@@ -19,20 +19,24 @@ def get(idx,mirror,outfile):
     return downL(mirrors[mirror].replace("{}",idx),outfile)
 
 import os
+ids = []
 osusongsdir = os.getcwd() + "\\Songs"
 files = os.listdir(osusongsdir)
-ids = []
+def scanosudir():
+    for file in files:
+        sp = file.split()
+        if str(sp[0]).isnumeric() == True:
+            ids.append(sp[0])
+def readosrfile(FN):
+    osrfile = open(FN,"r")
+    ids = osrfile.read().split('\n')
+    osrfile.close()
 
-for file in files:
-    sp = file.split()
-    if str(sp[0]).isnumeric() == True:
-        ids.append(sp[0])
-
-
-songsfile = open('songids.txt','w')
-for idx in ids:
-    songsfile.write(idx+'\n')
-songsfile.close()
+def generateosrfile(osrfilename='songids.txt'):
+    songsfile = open(osrfilename,'w')
+    for idx in ids:
+        songsfile.write(idx+'\n')
+    songsfile.close()
 try:
     os.mkdir("dlsongs")
 except FileExistsError:
@@ -56,6 +60,18 @@ for map in ids:
 
 
 
-ap = argparse.ArgumentParser(description='Osu Song Redownloader')
-ap.add_argument("-f", "--file", required=False,
-                help="a text file containing beatmap ids seperated by newline")
+ap = argparse.ArgumentParser(description='Osu Song Redownloader.')
+ap.add_argument("-i", "--IDin", required=True,
+                help="set it to either False to scan the songs directory, or a file name to import a file with the OSR song id structure.")
+ap.add_argument("-o", "--OutFile", required=False,
+                help="[filename]/False; generates the songids.txt file or not.")
+args = vars(ap.parse_args())
+
+if args["IDin"] == False:
+    scanosudir()
+else:
+    readosrfile(args["IDin"])
+if args["OutFile"] == False:
+    pass
+else:
+    generateosrfile(args["OutFile"])
