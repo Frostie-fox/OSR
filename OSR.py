@@ -67,7 +67,7 @@ ap = argparse.ArgumentParser(description='Osu Song Redownloader.')
 ap.add_argument("-i", "--IDin", required=True,
                 help="set it to either False to scan the songs directory, or a file name to import a file with the OSR song id structure.")
 ap.add_argument("-o", "--OutFile", required=False,
-                help="[filename]/False; generates the songids.txt file or not.")
+                help="[filename]/False/Ignore (None); generates the songids.txt file or not.")
 args = vars(ap.parse_args())
 if args["IDin"] == 'False':
     ids = scanosudir()
