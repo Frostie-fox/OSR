@@ -4,14 +4,14 @@ Osu Song Redownloader
 # info
 To use it, at least two arguments needs to be given:
 
-	-File or Directory: -t, True or False (False = Directory)
+	File or Directory (Id In Type): -t, True or False (False = Directory)
 
-	-Dir. / File Name: the name of the file/directory for the song ids
+	Directory / File Name (Id in): -i the name of the file/directory for the song ids
 There are optional arguments:
 
-	-Outfile: -o, either False (can ignore too) or any value, which will be the file name.
+	Outfile: -o, either False (can ignore too) or any value, which will be the file name.
 
-	-Wait: -w, which will wait a specific time ammount before downloading the next beatmap (in seconds)
+	Wait: -w, which will wait a specific time ammount before downloading the next beatmap (in seconds)
 
 If file more is used, song data will not be printed.
 
