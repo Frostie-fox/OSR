@@ -1,15 +1,24 @@
 # OSR
-Osu Song Redownloader, an app i made in python in like half an hour bcos i was bored, then i kept updating.
+Osu Song Redownloader
 
 # info
-it generates a "songids.txt" file with all the beatmap ids in case the user wants the list, and it makes a "dlsongs" folder where it puts the song.
-It also reads the folder if a song already exists there, so it won't redownload maps it already downloaded in case it exits.
-There are two versions of the app, OSR and OSR-OSUSONGS, OSR-OSUSONGS needs to be used in the osu songs folder.
- 
+To use it, at least two arguments needs to be given:
+	-File or Directory: -t, True or False (False = Directory)
+	-Dir. / File Name: the name of the file/directory for the song ids
+There are optional arguments:
+	-Outfile: -o, either False (can ignore too) or any value, which will be the file name.
+	-Wait: -w, which will wait a specific time ammount before downloading the next beatmap (in seconds)
+If file more is used, song data will not be printed.
 
-# PUT INTO MAIN OSU FOLDER NOT SONGS FOLDER!
-# Run as a command prompt application:
+# Run like this:
 ```
 py -m OSR.py --help
 ```
+
 # This only works if you didn't modify the folders in the songs folder in the osu directory, because it pulls all data from folder names.
+
+
+# disclaimer:
+	I am in no way shape or form affiliated with OSU and their developers. I am a person alone, with too much free time, who decided to automate a simple but time consuming task.
+	If any Copyright issues pop up, they are completely unintentional, and i am willing to remove any conflicting content.
+	I am not responsible for any damages done by any user using this tool, as i do not encourage people to use this tool in a bad way.
