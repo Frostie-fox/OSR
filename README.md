@@ -23,7 +23,7 @@ There are planned to be two modes:
 ```
 py -m OSR.py --help
 ```
-#File Modes:
+# File Modes:
 Legacy: Reads the info from folder title
 
 New Mode: Reads info from beatmap .osu file "[metadata]" section
