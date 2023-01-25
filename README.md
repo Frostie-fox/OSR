@@ -34,3 +34,4 @@ If New Mode fails, legacy mode will execute by default, which can be disabled
 	I am in no way shape or form affiliated with OSU and their developers. I am a person alone, with too much free time, who decided to automate a simple but time consuming task.
 	If any Copyright issues pop up, they are completely unintentional, and i am willing to remove any conflicting content.
 	I am not responsible for any damages done by any user using this tool, as i do not encourage people to use this tool in a bad way.
+	This project does not do anything with Osu replay files (*.OSR files)
