@@ -12,16 +12,23 @@ There are optional arguments:
 	Outfile: -o, either False (can ignore too) or any value, which will be the file name.
 
 	Wait: -w, which will wait a specific time ammount before downloading the next beatmap (in seconds)
+There are planned to be two modes:
+	Legacy/Classic: reads the info from the title
 
-If file more is used, song data will not be printed.
+	New: reads beatmap metadata from a(n) .osu file
+
+
 
 # Run like this:
 ```
 py -m OSR.py --help
 ```
+#File Modes:
+Legacy: Reads the info from folder title
 
-# This only works if you didn't modify the folders in the songs folder in the osu directory, because it pulls all data from folder names.
+New Mode:reads info from beatmap .osu file "[metadata]" section
 
+If New Mode fails, legacy mode will execute by default, which can be disabled
 
 # disclaimer:
 	I am in no way shape or form affiliated with OSU and their developers. I am a person alone, with too much free time, who decided to automate a simple but time consuming task.
