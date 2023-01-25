@@ -26,9 +26,9 @@ py -m OSR.py --help
 #File Modes:
 Legacy: Reads the info from folder title
 
-New Mode:reads info from beatmap .osu file "[metadata]" section
+New Mode: Reads info from beatmap .osu file "[metadata]" section
 
-If New Mode fails, legacy mode will execute by default, which can be disabled
+If New Mode fails, legacy mode will execute by default, which can be disabled with "-L False"
 
 # disclaimer:
 	I am in no way shape or form affiliated with OSU and their developers. I am a person alone, with too much free time, who decided to automate a simple but time consuming task.
