@@ -35,3 +35,9 @@ If New Mode fails, legacy mode will execute by default, which can be disabled wi
 	If any Copyright issues pop up, they are completely unintentional, and i am willing to remove any conflicting content.
 	I am not responsible for any damages done by any user using this tool, as i do not encourage people to use this tool in a bad way.
 	This project does not do anything with Osu replay files (*.OSR files)
+
+# Update notes:
+-Legacy/New mode implemented, can't be disabled.
+-When using directory mode, i tried to implement a precentage progress kind of thing which shows how many were done with legacy mode, how many failed, and how many were redownloaded successfully
+But it is buggy and doesn't really work at the moment. I will try to fix it in the next version.
+-I worked a lot on this version
